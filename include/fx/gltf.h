@@ -1709,7 +1709,7 @@ namespace gltf
 
         inline Document Create(nlohmann::json const & json, DataContext const & dataContext)
         {
-            Document document = json;
+            Document document = json.get<Document>();
 
             if (document.buffers.size() > dataContext.readQuotas.MaxBufferCount)
             {
